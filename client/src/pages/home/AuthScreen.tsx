@@ -8,7 +8,7 @@ const AuthScreen = () => {
     <div className='hero-bg relative'>
       <header className='max-w-6xl mx-auto flex items-center justify-between p-4 pb-10'>
         <img src='/netflix-logo.png' alt='netflix-logo' className='w-32 md:w-52' />
-        <Link to={"/signin"} className='bg-red-600 text-white py-1 rounded px-2'>SignIn</Link>
+        <Link to={"/signup"} className='bg-red-600 text-white py-1 rounded px-2'>SignIn</Link>
       </header>
       <div className='flex flex-col items-center justify-center text-center py-40 text-white max-w-6xl mx-auto'>
         <h1 className='text-4xl sm:text-6xl font-bold mb-4'>Unlimited Movies,Tv Shows,and more</h1>
