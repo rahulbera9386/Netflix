@@ -4,28 +4,17 @@ import { persist } from "zustand/middleware";
 import axios from "axios";
 import { authAPI, axiosInstance } from "../utills/api";
 
-export type User = {
-  id: string;
-  username: string;
-  email: string;
-};
 
-interface AuthState {
-  user: User | null;
-  isAuthenticated: boolean;
-  error: string | null;
-  login: (email: string, password: string) => Promise<boolean>;
-  logout: () => Promise<void>;
-}
 
-export const useAuthStore = create<AuthState>()(
+
+export const useAuthStore = create()(
   persist(
     (set) => ({
       user: null,
       isAuthenticated: false,
       error: null,
 
-      login: async (email: string, password: string) => {
+      login: async (email, password) => {
         try {
           set({ error: null });
           const response = await axiosInstance.request({

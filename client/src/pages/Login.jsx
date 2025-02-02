@@ -14,13 +14,13 @@ const {login,error}=useAuthStore();
 const navigate=useNavigate()
 
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value })
   }
   //console.log(formData)
 
-  const handleSubmit=async(e:React.FormEvent)=>{
+  const handleSubmit=async(e)=>{
     e.preventDefault()
     try{
       const data=await login(formData.email,formData.password);
