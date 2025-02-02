@@ -110,7 +110,9 @@ const Signup = () => {
               Sign Up
             </button>
           </form>
+          <p className='text-white text-center'>Already have an account?{" "}<Link to={"/login"} className='hover:underline'>Login</Link></p>
         </div>
+        
       </div>
     </div>
   );

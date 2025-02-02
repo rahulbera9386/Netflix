@@ -89,7 +89,7 @@ const navigate=useNavigate()
             </div>
             <button className='bg-red-600 w-full px-6 py-2 font-semibold text-white text-2xl rounded'>Login</button>
           </form>
-         
+          <p className='text-white text-center'>New to Netflix?{" "}<Link to={"/signup"} className='hover:underline'>SignUp</Link></p>
         </div>
       </div>
 
