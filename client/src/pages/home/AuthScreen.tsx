@@ -1,11 +1,14 @@
 import { ChevronRight } from 'lucide-react'
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+
 
 const AuthScreen = () => {
-  const [email, setEmail] = useState("")
+  const [email, setEmail] = useState("");
+  const navigate=useNavigate()
+  
   return (
-    <div className='hero-bg relative'>
+    <div className="hero-bg relative">
       <header className='max-w-6xl mx-auto flex items-center justify-between p-4 pb-10'>
         <img src='/netflix-logo.png' alt='netflix-logo' className='w-32 md:w-52' />
         <Link to={"/signup"} className='bg-red-600 text-white py-1 rounded px-2'>SignIn</Link>
@@ -16,7 +19,7 @@ const AuthScreen = () => {
         <p className='mb-4'>Ready To watch?Enter your email to create or restart membership</p>
         <form className=' flex flex-col sm:flex-row gap-4 w-1/2'>
           <input type='email' placeholder='Email address' value={email} onChange={(e) => setEmail(e.target.value)} className='p-2 rounded border-gray-700 bg-black/80 flex-1 border' />
-          <button className='flex justify-center items-center px-2 lg:px-6 py-1 sm:py-2 rounded bg-red-600'>
+          <button className='flex justify-center items-center px-2 lg:px-6 py-1 sm:py-2 rounded bg-red-600' onClick={()=>navigate("/login")}>
             Get Started
             <ChevronRight size={12} />
 
