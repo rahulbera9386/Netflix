@@ -17,7 +17,11 @@ app.use(cors({origin:process.env.FRONTEND_URL,methods:["PUT","GET","UPDATE","POS
 
 
 app.use("/api/auth",userRoutes);
-app.use("/api/movie",movieRoutes)
+app.use("/api/movie",movieRoutes);
+
+app.get("/",(_,res)=>{
+    res.send("Backend Running")
+})
 
 app.listen(PORT,()=>{
     console.log(`Server is running on port:${PORT}`)
