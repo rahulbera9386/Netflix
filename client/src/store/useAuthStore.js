@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 import axios from "axios";
-import { authAPI, axiosInstance } from "../utills/api";
+import { authAPI, axiosInstance } from "../utills/api.js";
 
 
 
@@ -17,7 +17,7 @@ export const useAuthStore = create()(
       login: async (email, password) => {
         try {
           set({ error: null });
-          const response = await axiosInstance.request({
+          const response = await axiosInstance({
             ...authAPI.login,
             data: { email, password },
           });
@@ -38,7 +38,7 @@ export const useAuthStore = create()(
 
       logout: async () => {
         try {
-          await axiosInstance.request({
+          await axiosInstance({
             ...authAPI.logout,
           });
           set({ user: null, isAuthenticated: false });
