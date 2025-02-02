@@ -48,7 +48,9 @@ export const trendingMovies=async(req:Request,res:Response):Promise<void>=>{
 export const upcomingMovies=async(req:Request,res:Response):Promise<void>=>{
 	try{
 		const data=await fetchFromTmdb('https://imdb236.p.rapidapi.com/imdb/india/upcoming');
-		res.status(200).json({ success: true, content: data });
+		const randomData=data[Math.floor(Math.random()*data.length)]
+		//console.log(randomData)
+		res.status(200).json({ success: true,content:data,random:randomData });
 
 	}
 	catch(error)

@@ -23,3 +23,27 @@ export const authAPI={
         method:"POST"
     }
 }
+
+
+export const movieAPI={
+    upcoming:{
+        url:"/api/movie/upcoming",
+        method:"GET"
+    },
+    popular:{
+        url:"/api/movie/most-popular",
+        method:"GET"
+    },
+    topRated:{
+        url:"/api/movie/top-rated",
+        method:"GET"
+    },
+    trending:{
+        url:"/api/movie/trending",
+        method:"GET"
+    },
+    boxOffice:{
+        url:"/api/movie/top-box-office",
+        method:"GET"
+    }
+}
